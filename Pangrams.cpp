@@ -10,7 +10,7 @@ string pangrams(string s)
             c = tolower(c);
         }
         
-        mp[c]++;
+        mp[c];
         
         if (mp.size() == 27)
         {
