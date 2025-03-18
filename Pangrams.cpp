@@ -1,3 +1,14 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+/*
+ * Complete the 'pangrams' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts STRING s as parameter.
+ */
+
 string pangrams(string s)
 {
     std::string result {"pangram"};
@@ -23,7 +34,7 @@ string pangrams(string s)
 }
 
 
-string pangrams(string s)
+string pangrams2(string s)
 {
     std::string result {"pangram"};
     std::map<char, char> mp;
