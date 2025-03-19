@@ -57,3 +57,21 @@ string pangrams2(string s)
     result.insert(0, "not ");
     return result;
 }
+
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string s;
+    getline(cin, s);
+
+    string result = pangrams(s);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
