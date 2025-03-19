@@ -47,6 +47,28 @@ std::string pangrams2(std::string s)
 }
 
 
+std::string pangrams_map(std::string s)
+{
+    std::unordered_map<char, bool> mp;
+    int count = 0;
+
+    for (char c : s)
+    {
+        if (std::isalpha(c))
+        {
+            c = std::tolower(c);
+            if (!mp[c])
+            {
+                mp[c] = true;
+                if (++count == 26) return "pangram";
+            }
+        }
+    }
+
+    return "not pangram";
+}
+
+
 
 string pangrams(string s)
 {
