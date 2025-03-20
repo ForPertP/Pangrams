@@ -9,7 +9,8 @@ using namespace std;
  * The function accepts STRING s as parameter.
  */
 
-std::string pangrams(std::string s)
+
+string pangrams(string s)
 {
     std::vector<bool> alphabet(26, false);
     int count = 0;
@@ -31,7 +32,7 @@ std::string pangrams(std::string s)
 }
 
 
-std::string pangrams2(std::string s)
+string pangrams2(string s)
 {
     std::unordered_set<char> st;
     
@@ -48,7 +49,7 @@ std::string pangrams2(std::string s)
 }
 
 
-std::string pangrams3(std::string s)
+string pangrams3(string s)
 {
     std::unordered_map<char, bool> mp;
     int count = 0;
