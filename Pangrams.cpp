@@ -11,22 +11,6 @@ using namespace std;
 
 std::string pangrams(std::string s)
 {
-    std::unordered_set<char> st;
-    
-    for (char c : s)
-    {
-        if (std::isalpha(c))
-        {
-            st.insert(std::tolower(c));
-            if (st.size() == 26) return "pangram";
-        }
-    }
-
-    return "not pangram";
-}
-
-std::string pangrams2(std::string s)
-{
     std::vector<bool> alphabet(26, false);
     int count = 0;
 
@@ -47,7 +31,24 @@ std::string pangrams2(std::string s)
 }
 
 
-std::string pangrams_map(std::string s)
+std::string pangrams2(std::string s)
+{
+    std::unordered_set<char> st;
+    
+    for (char c : s)
+    {
+        if (std::isalpha(c))
+        {
+            st.insert(std::tolower(c));
+            if (st.size() == 26) return "pangram";
+        }
+    }
+
+    return "not pangram";
+}
+
+
+std::string pangrams3(std::string s)
 {
     std::unordered_map<char, bool> mp;
     int count = 0;
