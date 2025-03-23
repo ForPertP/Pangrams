@@ -24,7 +24,25 @@ class Result
 
     public static string pangrams(string s)
     {
+        bool[] alphabet = new bool[26];
+        int count = 0;
+
+        foreach (char c in s)
+        {
+            if (char.IsLetter(c))
+            {
+                int index = char.ToLower(c) - 'a';
+                if (!alphabet[index])
+                {
+                    alphabet[index] = true;
+                    if (++count == 26) return "pangram";
+                }
+            }
+        }
+
+        return "not pangram";
     }
+    
 }
 
 
