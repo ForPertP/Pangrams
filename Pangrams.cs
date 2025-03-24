@@ -42,6 +42,22 @@ class Result
 
         return "not pangram";
     }
+
+     public static string pangrams2(string s)
+    {
+        HashSet<char> set = new HashSet<char>();
+
+        foreach (char c in s)
+        {
+            if (char.IsLetter(c))
+            {
+                set.Add(char.ToLower(c));
+                if (set.Count == 26) return "pangram";
+            }
+        }
+
+        return "not pangram";
+    }    
     
 }
 
