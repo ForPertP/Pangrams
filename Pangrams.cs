@@ -42,8 +42,9 @@ class Result
 
         return "not pangram";
     }
-
-     public static string pangrams2(string s)
+    
+    
+    public static string pangrams2(string s)
     {
         HashSet<char> set = new HashSet<char>();
 
@@ -59,6 +60,27 @@ class Result
         return "not pangram";
     }    
     
+    
+    public static string pangrams3(string s)
+    {
+        Dictionary<char, bool> map = new Dictionary<char, bool>();
+        int count = 0;
+
+        foreach (char c in s)
+        {
+            if (char.IsLetter(c))
+            {
+                char lowerC = char.ToLower(c);
+                if (!map.ContainsKey(lowerC))
+                {
+                    map[lowerC] = true;
+                    if (++count == 26) return "pangram";
+                }
+            }
+        }
+
+        return "not pangram";
+    }    
 }
 
 
