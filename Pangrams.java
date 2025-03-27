@@ -50,8 +50,23 @@ class Result {
         return "not pangram";
     }
     
-  
+    
+    public static String pangrams3(String s) {
+        Map<Character, Boolean> map = new HashMap<>();
+        int count = 0;
 
+        for (char c : s.toCharArray()) {
+            if (Character.isLetter(c)) {
+                char lowerC = Character.toLowerCase(c);
+                if (!map.containsKey(lowerC)) {
+                    map.put(lowerC, true);
+                    if (++count == 26) return "pangram";
+                }
+            }
+        }
+
+        return "not pangram";
+    }    
 }
 
 
